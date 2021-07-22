@@ -4,6 +4,10 @@ This Max For Live gives you a button that you can map to a MIDI controller that
 will toggle "No Input" for the selected track. This is useful for when you want
 to record automation but not overwrite your notes or recorded audio.
 
+## Installation
+
+Clone this repository under a directory in Max For Live's search path (Options ... File Preferences, then click the "+" at the bottom of the window to add a directory.) I recommend using one parent directory for projects like this, then adding that parent directory to your Live sidebar.
+
 ## Usage
 
 Add m4l-js-toggleInput to any track in your Live Set. I like to have a track called "META" for things like this.
