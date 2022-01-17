@@ -1,8 +1,28 @@
 inlets=1;
 outlets=0;
+autowatch=1;
 
-var log = require('utils.js').log;
 var origInputs = {};
+
+function log() {
+  for(var i=0,len=arguments.length; i<len; i++) {
+    var message = arguments[i];
+    if(message && message.toString) {
+      var s = message.toString();
+      if(s.indexOf("[object ") >= 0) {
+        s = JSON.stringify(message);
+      }
+      post(s);
+    }
+    else if(message === null) {
+      post("<null>");
+    }
+    else {
+      post(message);
+    }
+  }
+  post("\n");
+}
 
 function bang(i) {
   var liveObject = new LiveAPI('live_set view selected_track');
